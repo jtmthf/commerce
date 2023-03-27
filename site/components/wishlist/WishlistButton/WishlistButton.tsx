@@ -1,3 +1,5 @@
+'use client'
+
 import React, { FC, useState } from 'react'
 import cn from 'clsx'
 import { useUI } from '@components/ui'

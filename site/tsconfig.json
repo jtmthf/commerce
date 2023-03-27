@@ -25,8 +25,16 @@
       "@commerce/*": ["../packages/commerce/src/*"],
       "@framework": ["../packages/local/src"],
       "@framework/*": ["../packages/local/src/*"]
-    }
+    },
+    "plugins": [{ "name": "next" }]
   },
-  "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

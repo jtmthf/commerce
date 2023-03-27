@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, useState, useEffect, ReactNode } from 'react'
 import throttle from 'lodash.throttle'
 import cn from 'clsx'

@@ -1,11 +1,14 @@
+'use client'
+
 import cn from 'clsx'
 import Link from 'next/link'
 import { FC, useState } from 'react'
-import { useRouter } from 'next/router'
+import { usePathname, useRouter } from 'next/navigation'
 import s from './I18nWidget.module.css'
 import { Cross, ChevronRight } from '@components/icons'
 import ClickOutside from '@lib/click-outside'
 import Image from 'next/image'
+import { useLocale } from '../Locale'
 interface LOCALE_DATA {
   name: string
   img: {
@@ -33,12 +36,8 @@ const LOCALES_MAP: Record<string, LOCALE_DATA> = {
 
 const I18nWidget: FC = () => {
   const [display, setDisplay] = useState(false)
-  const {
-    locale,
-    locales,
-    defaultLocale = 'en-US',
-    asPath: currentPath,
-  } = useRouter()
+  const pathName = usePathname()
+  const { locale, locales, defaultLocale } = useLocale()
 
   const options = locales?.filter((val) => val !== locale)
   const currentLocale = locale || defaultLocale
@@ -82,8 +81,7 @@ const I18nWidget: FC = () => {
                 {options.map((locale) => (
                   <li key={locale}>
                     <Link
-                      href={currentPath}
-                      locale={locale}
+                      href={pathName!}
                       className={cn(s.item)}
                       onClick={() => setDisplay(false)}
                     >

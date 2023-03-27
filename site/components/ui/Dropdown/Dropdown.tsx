@@ -1,3 +1,5 @@
+'use client'
+
 import cn from 'clsx'
 import React from 'react'
 import s from './Dropdown.module.css'

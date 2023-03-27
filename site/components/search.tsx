@@ -2,7 +2,7 @@ import cn from 'clsx'
 import type { SearchPropsType } from '@lib/search-props'
 import Link from 'next/link'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 import type { Brand } from '@commerce/types/site'
 import type { Product } from '@commerce/types/product'
@@ -34,8 +34,10 @@ export default function Search({ categories, brands }: SearchPropsType) {
   const [toggleFilter, setToggleFilter] = useState(false)
 
   const router = useRouter()
-  const { asPath, locale } = router
-  const { q, sort } = router.query
+  const { asPath, locale } = { asPath: 'en-US', locale: 'en-US' }
+  const searchParams = useSearchParams()
+  const q = searchParams?.get('q')
+  const sort = searchParams?.get('sort')
   // `q` can be included but because categories and designers can't be searched
   // in the same way of products, it's better to ignore the search input if one
   // of those is selected

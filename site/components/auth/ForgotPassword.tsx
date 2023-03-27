@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, useEffect, useState, useCallback } from 'react'
 import { validate } from 'email-validator'
 import { useUI } from '@components/ui/context'

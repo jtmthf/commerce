@@ -1,3 +1,5 @@
+'use client'
+
 import { ChangeEvent, useEffect, useState } from 'react'
 import cn from 'clsx'
 import Image from 'next/image'

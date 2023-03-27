@@ -1,3 +1,5 @@
+'use client'
+
 import cn from 'clsx'
 import s from './Sidebar.module.css'
 import { useEffect, useRef } from 'react'

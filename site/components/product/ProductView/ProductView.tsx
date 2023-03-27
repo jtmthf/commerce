@@ -1,3 +1,5 @@
+'use client'
+
 import cn from 'clsx'
 import Image from 'next/image'
 import s from './ProductView.module.css'

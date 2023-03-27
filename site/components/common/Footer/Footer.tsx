@@ -1,7 +1,8 @@
+'use client'
+
 import { FC } from 'react'
 import cn from 'clsx'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import type { Page } from '@commerce/types/page'
 import getSlug from '@lib/get-slug'
 import { Github, Vercel } from '@components/icons'
@@ -96,7 +97,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
 }
 
 function usePages(pages?: Page[]) {
-  const { locale } = useRouter()
+  const locale = 'en-US'
   const sitePages: Page[] = []
 
   if (pages) {

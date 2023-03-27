@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, useState } from 'react'
 import cn from 'clsx'
 import Link from 'next/link'

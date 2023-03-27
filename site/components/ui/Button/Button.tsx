@@ -3,9 +3,7 @@ import React, {
   forwardRef,
   ButtonHTMLAttributes,
   JSXElementConstructor,
-  useRef,
 } from 'react'
-import { mergeRefs } from 'react-merge-refs'
 import s from './Button.module.css'
 import { LoadingDots } from '@components/ui'
 
@@ -35,7 +33,6 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
     Component = 'button',
     ...rest
   } = props
-  const ref = useRef<typeof Component>(null)
 
   const rootClassName = cn(
     s.root,
@@ -53,7 +50,7 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
     <Component
       aria-pressed={active}
       data-variant={variant}
-      ref={mergeRefs([ref, buttonRef])}
+      ref={buttonRef}
       className={rootClassName}
       disabled={disabled}
       style={{

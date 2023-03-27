@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { FC, useState } from 'react'
 import CartItem from '@components/cart/CartItem'
